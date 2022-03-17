@@ -45,7 +45,7 @@ defmodule FuelCalculator.Shuttle do
     ## Examples
     iex> FuelCalculator.Shuttle.find_gravity(:earth)
     9.807
-    iex> FuelCalculator.Shuttle.find_gravity(:9.807)
+    iex> FuelCalculator.Shuttle.find_gravity(9.807)
     9.807
   """
   @spec find_gravity(any) :: any
