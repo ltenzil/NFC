@@ -10,12 +10,12 @@ defmodule FuelCalculator.MixProject do
       deps: deps(),
 
       # Docs
-      name: "Fuel Calculator",
+      name: "FuelCalculator",
       source_url: "https://github.com/ltenzil/NFC",
       homepage_url: "https://ltenzil.github.io/ltenzil/",
       docs: [
         # The main page in the docs
-        main: "Fuel Calculator",
+        main: "FuelCalculator",
         extras: ["README.md"]
       ],
       description: description(),
