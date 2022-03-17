@@ -29,7 +29,7 @@ defmodule FuelCalculator.Shuttle do
     ## Examples
     iex> FuelCalculator.Shuttle.fuel_for_trip(:land, 28801, 9.807)
   """
-  @spec compute_consumption(atom, integer, float) :: float
+  @spec fuel_for_trip(atom, integer, float) :: float
   def fuel_for_trip(directive, mass, gravity) do
     fuel_required = compute_consumption(directive, mass, gravity)
 
@@ -38,13 +38,25 @@ defmodule FuelCalculator.Shuttle do
       else: fuel_required + fuel_for_trip(directive, fuel_required, gravity)
   end
 
-  defp find_mode(:land), do: %{arg1: 0.033, arg2: 42}
-  defp find_mode(:launch), do: %{arg1: 0.042, arg2: 33}
+  @doc """
+    find_gravity/1
 
+    Used to get gravity value using keyword
+    ## Examples
+    iex> FuelCalculator.Shuttle.find_gravity(:earth)
+    9.807
+    iex> FuelCalculator.Shuttle.find_gravity(:9.807)
+    9.807
+  """
+  @spec find_gravity(any) :: any
   def find_gravity(value) do
     case @planets[value] do
       nil -> value
       gravity -> gravity
     end
   end
+
+  defp find_mode(:land), do: %{arg1: 0.033, arg2: 42}
+  defp find_mode(:launch), do: %{arg1: 0.042, arg2: 33}
+
 end
