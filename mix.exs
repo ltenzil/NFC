@@ -17,7 +17,9 @@ defmodule FuelCalculator.MixProject do
         # The main page in the docs
         main: "Fuel Calculator",
         extras: ["README.md"]
-      ]
+      ],
+      description: description(),
+      package: package()
     ]
   end
 
@@ -34,6 +36,21 @@ defmodule FuelCalculator.MixProject do
       {:ex_doc, "~> 0.27", only: :dev, runtime: false}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+    ]
+  end
+
+  defp description do
+    "A few sentences (a paragraph) describing the project."
+  end
+
+  defp package() do
+    [
+      # This option is only needed when you don't want to use the OTP application name
+      name: "fuel_calculator",
+      # These are the default files included in the package
+      files: ~w(lib .formatter.exs mix.exs README* LICENSE*),
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => "https://github.com/ltenzil/NFC"}
     ]
   end
 end
