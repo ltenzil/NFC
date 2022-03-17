@@ -2,6 +2,22 @@ defmodule FuelCalculator.Validator do
   @directives [:land, :launch]
   @planets [:earth, :mars, :moon]
 
+  @moduledoc """
+  Documentation for `Validator`.
+  """
+
+  @doc """
+    validate/2
+
+    Used to check the input for errors
+    ## Examples
+    iex> FuelCalculator.Validator.validate(23, "hello")
+    {:error, "Invalid input: paths"}
+    iex> FuelCalculator.Validator.validate(28801, [{:land, :earth}])
+    {:ok, [{:land, :earth}]}
+  """
+
+  @spec validate(number, list(tuple)) :: tuple
   def validate(mass, _paths) when not is_integer(mass) or mass <= 0 do
     {:error, "Invalid input: mass"}
   end
