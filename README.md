@@ -17,7 +17,7 @@ end
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/fuel_calculator/0.1.0/FuelCalculator.html](https://hexdocs.pm/fuel_calculator).
+be found at [https://hexdocs.pm/fuel_calculator/0.1.0/FuelCalculator.html](https://hexdocs.pm/fuel_calculator/0.1.0/FuelCalculator.html).
 
 ## Usage
 FuelCalculator.calculate(28801, :land, :earth)
